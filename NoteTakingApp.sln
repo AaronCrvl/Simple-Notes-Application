@@ -1,0 +1,37 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.28307.572
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Noter", "WindowsFormsApp2\Noter.csproj", "{691230DF-DC5B-4E7E-BC3B-4EE1FCCA4DA6}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Framework", "ConsoleApp1\Framework.csproj", "{50708E15-7DC5-4DDA-90C6-706CA1EA17B8}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{F021D96F-CC98-43CB-8822-058923845223}"
+	ProjectSection(SolutionItems) = preProject
+		.gitignore = .gitignore
+		DevNotes.txt = DevNotes.txt
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{691230DF-DC5B-4E7E-BC3B-4EE1FCCA4DA6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{691230DF-DC5B-4E7E-BC3B-4EE1FCCA4DA6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{691230DF-DC5B-4E7E-BC3B-4EE1FCCA4DA6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{691230DF-DC5B-4E7E-BC3B-4EE1FCCA4DA6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{50708E15-7DC5-4DDA-90C6-706CA1EA17B8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{50708E15-7DC5-4DDA-90C6-706CA1EA17B8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{50708E15-7DC5-4DDA-90C6-706CA1EA17B8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{50708E15-7DC5-4DDA-90C6-706CA1EA17B8}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {AEB9734D-1E16-4DA6-A0EA-EFB7ABC02B65}
+	EndGlobalSection
+EndGlobal
