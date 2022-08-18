@@ -3,7 +3,7 @@
 Using Windows Forms to acess the data and manipulate notes, and a Console App as a Framework that can acess the database hold other features.
 
 # !__Attention 
-You need to create and configure the app.settings inside de console app and windows form app to get it working, se and example below:
+You need to create and configure the app.settings inside de console app and windows form app to get it working, for example:
 
 ```html
 <configuration>
