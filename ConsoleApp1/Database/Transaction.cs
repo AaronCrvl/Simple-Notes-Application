@@ -45,8 +45,7 @@ namespace Framework.Database
         public static void ExecuteCreateObjectCommand(string sqlQuery)
         {
             try
-            {
-                //var connectionString = "connection timeout = 600; Persist Security Info = True; Password = P@ssw0rd; User ID = wgcapp; Initial Catalog = WGC_HML_VIANET; Data Source = WGCSERVERSQL01";
+            {                
                 var connectionString = GetConnectionString();
                 DataSet data = new DataSet();
                 data.Tables.Add(new DataTable());
@@ -73,7 +72,6 @@ namespace Framework.Database
         {
             try
             {
-                //var connectionString = "connection timeout = 600; Persist Security Info = True; Password = P@ssw0rd; User ID = wgcapp; Initial Catalog = WGC_HML_VIANET; Data Source = WGCSERVERSQL01";
                 var connectionString = GetConnectionString();
                 DataSet data = new DataSet();
                 data.Tables.Add(new DataTable());
@@ -99,8 +97,7 @@ namespace Framework.Database
         public static DataRow ExecuteSelectSingleObjectCommand(string sqlQuery)
         {
             try
-            {            
-                var connectionString = "connection timeout = 600; Persist Security Info = True; Password = P@ssw0rd; User ID = wgcapp; Initial Catalog = WGC_HML_VIANET; Data Source = WGCSERVERSQL01";
+            {                            
                 DataSet data = new DataSet();
                 data.Tables.Add(new DataTable());
 
@@ -126,8 +123,7 @@ namespace Framework.Database
         public static DataSet ExecuteSelectListOfObjectCommand(string sqlQuery)
         {
             try
-            {
-                var connectionString = "connection timeout = 600; Persist Security Info = True; Password = P@ssw0rd; User ID = wgcapp; Initial Catalog = WGC_HML_VIANET; Data Source = WGCSERVERSQL01";
+            {               
                 DataSet data = new DataSet();
                 data.Tables.Add(new DataTable());
 
