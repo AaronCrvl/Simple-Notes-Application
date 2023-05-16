@@ -34,7 +34,7 @@ namespace NoteTakingApp
         private void LoadGridNotes()
         {
             var objList = new ListNote();
-            objList.LoadListNotes();
+            //objList.LoadListNotes();
             if (objList.list.Count > 0)
             {
                 gridViewNotes.DataSource = objList.list;
