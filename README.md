@@ -20,7 +20,7 @@ You need to create and configure the app.settings inside de console app and wind
 ```
 
 # Prints
-![Tela 1](https://github.com/AaronCrvl/Simple-Notes-Application/blob/main/img/App.jpg?raw=true)
+![Tela 1](https://github.com/AaronCrvl/Simple-Notes-Application/blob/main/WindowsFormsApp2/img/App.jpg?raw=true)
 
 ## Autor
 - [@AaronCrvl](https://www.github.com/AaronCrvl)
