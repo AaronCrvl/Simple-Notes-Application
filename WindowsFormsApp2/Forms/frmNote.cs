@@ -24,8 +24,9 @@ namespace Noter.Forms
 
         #region Constructor
         public frmNote()
-        {
+        {            
             InitializeComponent();
+            this.checkBoxActive.Checked = ckBoxActive;
         }    
         #endregion
 
@@ -52,8 +53,8 @@ namespace Noter.Forms
                 objNote.Active = this.checkBoxActive.Checked;
                 objNote.SaveNote();
             }
-            MessageBox.Show("Sucess saving note!");
-            //this.Close();
+            MessageBox.Show("Success saving note!");
+            this.Close();
         }
         #endregion
 

@@ -15,6 +15,7 @@ namespace Framework.Database
         #region Properties
         public SqlConnection Connection;
         private string ConnectionString;
+        public string DataBase = "";
         #endregion
 
         #region Constructor        
@@ -41,6 +42,23 @@ namespace Framework.Database
                 throw e;
             }            
         }
+
+        public static string IsConnectionActive() {
+            try
+            {
+                var connectionString = GetConnectionString();
+                var Connection = new SqlConnection(connectionString);
+                Connection.Open();
+                var database = Connection.Database;
+                Connection.Close();
+                return database;
+            }
+            catch (Exception e)
+            {
+                throw e;
+            }
+            
+        } 
         
         public static void ExecuteCreateObjectCommand(string sqlQuery)
         {
@@ -100,7 +118,7 @@ namespace Framework.Database
             {                            
                 DataSet data = new DataSet();
                 data.Tables.Add(new DataTable());
-
+                var connectionString = GetConnectionString();
                 using (SqlConnection connection = new SqlConnection(connectionString))
                 using (SqlCommand cmd = connection.CreateCommand())
                 using (SqlDataAdapter sda = new SqlDataAdapter(cmd))
@@ -126,7 +144,7 @@ namespace Framework.Database
             {               
                 DataSet data = new DataSet();
                 data.Tables.Add(new DataTable());
-
+                var connectionString = GetConnectionString();
                 using (SqlConnection connection = new SqlConnection(connectionString))
                 using (SqlCommand cmd = connection.CreateCommand())
                 using (SqlDataAdapter sda = new SqlDataAdapter(cmd))
@@ -143,55 +161,8 @@ namespace Framework.Database
             {
                 throw e;
             }
-        }
+        }        
 
-        //public SqlConnection GetConnection()
-        //{
-        //    try
-        //    {
-        //        this.Connection = new SqlConnection(this.ConnectionString);
-        //        return Connection;
-        //    }
-        //    catch (Exception e)
-        //    {
-        //        throw e;
-        //    }
-
-        //}
-
-        //public void OpenConnection()
-        //{
-        //    try
-        //    {
-        //        this.Connection = new SqlConnection(this.ConnectionString);
-        //        Connection.Open();
-        //    }
-        //    catch (Exception e)
-        //    {
-        //        throw e;
-        //    }
-
-        //}
-
-        //public void CloseConnection()
-        //{
-        //    try
-        //    {
-        //        if (this.Connection.State == System.Data.ConnectionState.Open)
-        //        {
-        //            this.Connection.Close();
-        //        }
-        //        else
-        //        {
-        //            MessageBox.Show("Open a connection before calling the closa method.");
-        //            return;
-        //        }
-        //    }
-        //    catch (Exception)
-        //    {
-        //        throw;
-        //    }
-        //}
         #endregion
     }
 }

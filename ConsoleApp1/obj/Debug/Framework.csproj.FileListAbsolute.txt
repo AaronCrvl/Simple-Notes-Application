@@ -1,7 +1,6 @@
 C:\Users\aaron\source\repos\WindowsFormsApp2\ConsoleApp1\bin\Debug\ConsoleApp1.exe.config
 C:\Users\aaron\source\repos\WindowsFormsApp2\ConsoleApp1\bin\Debug\ConsoleApp1.exe
 C:\Users\aaron\source\repos\WindowsFormsApp2\ConsoleApp1\bin\Debug\ConsoleApp1.pdb
-C:\Users\aaron\source\repos\WindowsFormsApp2\ConsoleApp1\obj\Debug\Framework.csprojAssemblyReference.cache
 C:\Users\aaron\source\repos\WindowsFormsApp2\ConsoleApp1\obj\Debug\Framework.csproj.CoreCompileInputs.cache
 C:\Users\aaron\source\repos\WindowsFormsApp2\ConsoleApp1\obj\Debug\ConsoleApp1.exe
 C:\Users\aaron\source\repos\WindowsFormsApp2\ConsoleApp1\obj\Debug\ConsoleApp1.pdb
@@ -82,3 +81,4 @@ C:\Users\aaron\source\repos\WindowsFormsApp2\ConsoleApp1\bin\Debug\es\DevExpress
 C:\Users\aaron\source\repos\WindowsFormsApp2\ConsoleApp1\bin\Debug\ja\DevExpress.Xpo.v17.2.resources.dll
 C:\Users\aaron\source\repos\WindowsFormsApp2\ConsoleApp1\bin\Debug\ru\DevExpress.Xpo.v17.2.resources.dll
 C:\Users\aaron\source\repos\WindowsFormsApp2\ConsoleApp1\obj\Debug\Framework.csproj.CopyComplete
+C:\Users\aaron\source\repos\WindowsFormsApp2\ConsoleApp1\obj\Debug\Framework.csproj.AssemblyReference.cache

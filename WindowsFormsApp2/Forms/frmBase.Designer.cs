@@ -34,7 +34,7 @@ namespace NoteTakingApp
             this.btnCreate = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
             this.btnRefresh = new System.Windows.Forms.Button();
-            this.gridViewNotes = new System.Windows.Forms.DataGridView();
+            this.gridViewNotes = new System.Windows.Forms.DataGridView();                        
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gridViewNotes)).BeginInit();
             this.SuspendLayout();

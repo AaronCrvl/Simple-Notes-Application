@@ -1,7 +1,6 @@
 C:\Users\aaron\source\repos\WindowsFormsApp2\WindowsFormsApp2\bin\Debug\WindowsFormsApp2.exe.config
 C:\Users\aaron\source\repos\WindowsFormsApp2\WindowsFormsApp2\bin\Debug\WindowsFormsApp2.exe
 C:\Users\aaron\source\repos\WindowsFormsApp2\WindowsFormsApp2\bin\Debug\WindowsFormsApp2.pdb
-C:\Users\aaron\source\repos\WindowsFormsApp2\WindowsFormsApp2\obj\Debug\Noter.csprojAssemblyReference.cache
 C:\Users\aaron\source\repos\WindowsFormsApp2\WindowsFormsApp2\obj\Debug\WindowsFormsApp2.Properties.Resources.resources
 C:\Users\aaron\source\repos\WindowsFormsApp2\WindowsFormsApp2\obj\Debug\Noter.csproj.GenerateResource.cache
 C:\Users\aaron\source\repos\WindowsFormsApp2\WindowsFormsApp2\obj\Debug\Noter.csproj.CoreCompileInputs.cache
@@ -56,3 +55,4 @@ C:\Users\aaron\source\repos\WindowsFormsApp2\WindowsFormsApp2\obj\Debug\Noter.Fo
 C:\Users\aaron\source\repos\WindowsFormsApp2\WindowsFormsApp2\bin\Debug\ConsoleApp1.exe
 C:\Users\aaron\source\repos\WindowsFormsApp2\WindowsFormsApp2\bin\Debug\ConsoleApp1.pdb
 C:\Users\aaron\source\repos\WindowsFormsApp2\WindowsFormsApp2\bin\Debug\ConsoleApp1.exe.config
+C:\Users\aaron\source\repos\WindowsFormsApp2\WindowsFormsApp2\obj\Debug\Noter.csproj.AssemblyReference.cache

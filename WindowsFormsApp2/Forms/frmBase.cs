@@ -18,33 +18,33 @@ namespace NoteTakingApp
     {
         public BaseForms()
         {
-            InitializeComponent();
-            LoadGridNotes();
+            InitializeComponent();            
         }
 
         private void btnCreate_Click(object sender, EventArgs e)
         {
             using (var frm = new frmNote())
             {
+                frm.ckBoxActive = true;
+                frm.SetProperties();
                 frm.ShowDialog();
             }
+
+            LoadGridNotes();
         }
 
         #region Events GridNotes
         private void LoadGridNotes()
         {
             var objList = new ListNote();
-            //objList.LoadListNotes();
+            objList.LoadListNotes();
             if (objList.list.Count > 0)
             {
                 gridViewNotes.DataSource = objList.list;
-                gridViewNotes.Columns["NewObject"].Visible = false;
-                gridViewNotes.Columns["Content"].Visible = false;
-                gridViewNotes.Columns["IdNote"].Visible = false;
                 gridViewNotes.ReadOnly = true;
-            }
-            else
-                MessageBox.Show("The sql select didn't return any data.");
+                gridViewNotes.Columns["NewObject"].Visible = false;
+                gridViewNotes.Columns["IdNote"].Visible = false;                                                                             
+            }            
         }
         #endregion       
 
@@ -80,8 +80,12 @@ namespace NoteTakingApp
             {
                 gridViewNotes.DataSource = objList.list;
                 gridViewNotes.AutoResizeColumns();
-                gridViewNotes.AutoResizeRows();               
+                gridViewNotes.AutoResizeRows();                
                 gridViewNotes.ReadOnly = true;
+                
+                gridViewNotes.ReadOnly = true;
+                gridViewNotes.Columns["NewObject"].Visible = false;
+                gridViewNotes.Columns["IdNote"].Visible = false;
             }
             else
                 MessageBox.Show("The sql select didn't return any data.");

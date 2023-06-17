@@ -26,6 +26,10 @@ namespace Noter.Data.Lists
 
                 sqlQuery.AppendLine(" SELECT * FROM [dbo].[Note] ORDER BY CREATION_DATE DESC ");
                 data = Framework.Database.Transaction.ExecuteSelectListOfObjectCommand(sqlQuery.ToString()).Tables[0];
+
+                if (data == null)
+                    return;
+
                 foreach (DataRow note in data.Rows)
                 {
                     var objNote = new Note();

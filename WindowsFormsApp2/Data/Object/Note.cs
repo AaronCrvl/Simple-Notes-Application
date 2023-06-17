@@ -8,7 +8,7 @@ using System.Windows.Forms;
 
 namespace NoteTakingApp.Data
 {
-    class Note
+    public class Note
     {
         #region Properties 
         private long pvIdNote;
@@ -116,20 +116,45 @@ namespace NoteTakingApp.Data
             else
                 UpdateNote();
         }
+        private string RemoveSpecialCharacters(string str)
+        {
+            StringBuilder sb = new StringBuilder();
+            foreach (char c in str)
+            {
+                if ((c >= '0' && c <= '9') || (c >= 'A' && c <= 'Z') || (c >= 'a' && c <= 'z') || c == '.' || c == '_')
+                {
+                    sb.Append(c);
+                }
+            }
+            return sb.ToString();
+        }
+        private void CleanData()
+        {
+            this.Content.Replace("'", "");
+            this.Title.Replace("'", "");
+
+            this.Content = RemoveSpecialCharacters(this.Content);
+            this.Title = RemoveSpecialCharacters(this.Title);
+        }
         public void CreateNote()
         {
 
             try
-            {                
+            {
+
+                CleanData();
+
                 var sqlIdQuery = new StringBuilder();
-                sqlIdQuery.AppendLine(" SELECT TOP 1 * FROM Note N(NOLOCK) ");
+                sqlIdQuery.AppendLine(" SELECT TOP 1 ID_NOTE FROM Note N(NOLOCK) ");
                 sqlIdQuery.AppendLine($" ORDER BY ID_NOTE DESC ");
-                this.IdNote = Framework.Database.Transaction.ExecuteSelectSingleObjectCommand(sqlIdQuery.ToString()).Field<int>("ID_NOTE");
+                
+                var data = Framework.Database.Transaction.ExecuteSelectSingleObjectCommand(sqlIdQuery.ToString());
+                this.IdNote = (data == null ? 1: data.Field<int>("ID_NOTE"));
                 this.IdNote += 1;
 
                 var sqlQuery = new StringBuilder();
                 sqlQuery.AppendLine(" INSERT INTO [dbo].[Note] (ID_NOTE, TITLE, CONTENT, CREATION_DATE, ACTIVE)");
-                sqlQuery.AppendLine($" VALUES ({this.IdNote}, '{this.Title}', '{this.Content}', '{DateTime.Now.ToString()}', {(this.Active == true ? "1": "0")})");
+                sqlQuery.AppendLine($" VALUES ({this.IdNote}, '{this.Title}', '{this.Content}', CONVERT(DATE, '{DateTime.Now.ToString()}', 103), {(this.Active == true ? "1": "0")})");
                 Framework.Database.Transaction.ExecuteCreateObjectCommand(sqlQuery.ToString());
             }
             catch (Exception e)
@@ -147,7 +172,7 @@ namespace NoteTakingApp.Data
                 sqlQuery.AppendLine($" TITLE = '{this.Title}', ");
                 sqlQuery.AppendLine($" CONTENT = '{this.Content}', ");
                 sqlQuery.AppendLine($" ACTIVE = {(this.Active == true ? "1" : "0")} ");
-                sqlQuery.AppendLine($" WHERE ID_NOTE = {this.IdNote.ToString()}");
+                sqlQuery.AppendLine($" WHERE ID_NOTE = {this.IdNote}");
                 Framework.Database.Transaction.ExecuteUpdateObjectCommand(sqlQuery.ToString());
             }
             catch (Exception e)
@@ -182,10 +207,13 @@ namespace NoteTakingApp.Data
         public bool IsNewObject()
         {
             try
-            {                
+            {
+                if (this.IdNote <= 0)
+                    return true;
+
                 var sqlQuery = new StringBuilder();
                 sqlQuery.AppendLine(" SELECT * FROM Note N(NOLOCK) ");
-                sqlQuery.AppendLine($" WHERE N.ID_NOTE = {this.IdNote.ToString()} ");
+                sqlQuery.AppendLine($" WHERE N.ID_NOTE = {this.IdNote} ");
                 var data = Framework.Database.Transaction.ExecuteSelectSingleObjectCommand(sqlQuery.ToString());
 
                 if (data.Table.Rows.Count > 0)
